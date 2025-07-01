@@ -9,3 +9,5 @@ zapret-discord-youtube-cloudflare
 Обход Cloudflare: Доступ к сайтам, защищённым Cloudflare, при их блокировке.
 
 Простая настройка: Минимальная конфигурация для быстрого запуска.
+
+Поддержите оригинального автора!:https://github.com/bol-van/zapret
