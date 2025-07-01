@@ -10,4 +10,4 @@ zapret-discord-youtube-cloudflare
 
 Простая настройка: Минимальная конфигурация для быстрого запуска.
 
-Поддержите оригинального автора!:https://github.com/bol-van/zapret
+Поддержите оригинального автора! https://github.com/bol-van/zapret
