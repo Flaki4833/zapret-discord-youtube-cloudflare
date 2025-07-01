@@ -44,3 +44,8 @@ ffzap.com
 betterttv.net
 7tv.app
 7tv.io
+steamcommunity.com
+store.steampowered.com
+help.steampowered.com
+api.steampowered.com
+login.steampowered.com
