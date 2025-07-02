@@ -4,7 +4,7 @@
 
 *"Plug & Play"* обход блокировок иностранных платформ, <img src="https://cdn-icons-png.flaticon.com/128/5968/5968756.png" height=11 /> **Discord** и <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" height=11 /> **YouTube** для Windows
 
-*"Cloudflare bypass"* обход замедления или блокировки cloudflare <im src= "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cloudflare_Logo.svg/512px-Cloudflare_Logo.svg.png" height=11 />
+*"Cloudflare bypass"* обход замедления или блокировки Cloudflare <im src= "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cloudflare_Logo.svg/512px-Cloudflare_Logo.svg.png" height=11 />
 
 Оригинальная альтернатива https://github.com/bol-van/zapret-win-bundle
 Альтернатива https://github.com/Flowseal/zapret-discord-youtube
