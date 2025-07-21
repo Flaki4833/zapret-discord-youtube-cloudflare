@@ -104,10 +104,8 @@ sc delete {название, которые вы узнали в шаге 1}
 - [`list-general.txt`](./lists/list-general.txt) для доменов (поддомены автоматически учитываются)
 - [`ipset-all.txt`](./lists/ipset-all.txt) для IP и подсетей
 
-Официально данная версия zapret не поддерживает Linux, если вы хотите использовать bat файлы в  Linux, есть программа для использования bat файлов в Linux 
-
-[https://gitlab.winehq.org/wine/wine/-/releases/wine-10.0]
-
+Официально данная версия zapret не поддерживает Linux, если вы хотите использовать bat файлы в  Linux, есть программа для использования bat файлов в Linux
+[Тут](https://gitlab.winehq.org/wine/wine/-/releases/wine-10.0) 
 Проект создан пользователем wine на gitlab
 
 ## ⭐Поддержка проекта
