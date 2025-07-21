@@ -105,7 +105,7 @@ sc delete {название, которые вы узнали в шаге 1}
 - [`ipset-all.txt`](./lists/ipset-all.txt) для IP и подсетей
 
 Официально данная версия zapret не поддерживает Linux, если вы хотите использовать bat файлы в  Linux, есть программа для использования bat файлов в Linux
-[Тут](https://gitlab.winehq.org/wine/wine/-/releases/wine-10.0) 
+[тут](https://gitlab.winehq.org/wine/wine/-/releases/wine-10.0) 
 Проект создан пользователем wine на gitlab
 
 ## ⭐Поддержка проекта
