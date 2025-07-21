@@ -69,7 +69,6 @@
 
 - Попробуйте в `service.bat` переключить `Switch Game Filter` и `Switch ipset`. На разных стратегиях они могут работать по-разному. **Подробнее, что они делают, [тут](https://github.com/Flowseal/zapret-discord-youtube?tab=readme-ov-file#%E2%84%B9%EF%B8%8F%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%B8%D0%B5-%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2)**
 
-- Проверьте другие стратегии (**`ALT`**/**`МГТС`** и другие)
 
 - Обновите файлы в папке [`bin`](./bin), взяв новые из [zapret-win-bundle/zapret-winws](https://github.com/bol-van/zapret-win-bundle/tree/master/zapret-winws)
 
