@@ -1,5 +1,5 @@
 @echo off
-set "LOCAL_VERSION=1.8.1"
+set "LOCAL_VERSION=1.3"
 
 :: External commands
 if "%~1"=="status_zapret" (
@@ -8,7 +8,11 @@ if "%~1"=="status_zapret" (
 )
 
 if "%~1"=="check_updates" (
-    call :service_check_updates soft
+    if not "%~2"=="soft" (
+        start /b service check_updates soft
+    ) else (
+        call :service_check_updates soft
+    )
     exit /b
 )
 
@@ -63,7 +67,7 @@ goto menu
 :service_status
 cls
 chcp 437 > nul
-echo Checking services and tasks...
+for /f "tokens=2*" %%A in ('reg query "HKLM\System\CurrentControlSet\Services\zapret" /v zapret-discord-youtube 2^>nul') do echo Service strategy installed from "%%B"
 call :test_service zapret
 call :test_service WinDivert
 
@@ -240,6 +244,10 @@ sc delete %SRVCNAME% >nul 2>&1
 sc create %SRVCNAME% binPath= "\"%BIN_PATH%winws.exe\" %ARGS%" DisplayName= "zapret" start= auto
 sc description %SRVCNAME% "Zapret DPI bypass software"
 sc start %SRVCNAME%
+for %%F in ("!file%choice%!") do (
+    set "filename=%%~nF"
+)
+reg add "HKLM\System\CurrentControlSet\Services\zapret" /v zapret-discord-youtube /t REG_SZ /d "!filename!" /f
 
 pause
 goto menu
@@ -252,8 +260,8 @@ cls
 
 :: Set current version and URLs
 set "GITHUB_VERSION_URL=https://raw.githubusercontent.com/Flowseal/zapret-discord-youtube/main/.service/version.txt"
-set "GITHUB_RELEASE_URL=https://github.com/Flowseal/zapret-discord-youtube/releases/tag/"
-set "GITHUB_DOWNLOAD_URL=https://github.com/Flowseal/zapret-discord-youtube/releases/latest/download/zapret-discord-youtube-"
+set "GITHUB_RELEASE_URL=https://github.com/Flaki4833/zapret-discord-youtube-cloudflare/releases/tag/"
+set "GITHUB_DOWNLOAD_URL=https://github.com/Flaki4833/zapret-discord-youtube-cloudflare/releases/download/Zapret3/zapret-discord-youtube-cloudflare.rar"
 
 :: Get the latest version from GitHub
 for /f "delims=" %%A in ('powershell -command "(Invoke-WebRequest -Uri \"%GITHUB_VERSION_URL%\" -Headers @{\"Cache-Control\"=\"no-cache\"} -TimeoutSec 5).Content.Trim()" 2^>nul') do set "GITHUB_VERSION=%%A"
@@ -262,7 +270,7 @@ for /f "delims=" %%A in ('powershell -command "(Invoke-WebRequest -Uri \"%GITHUB
 if not defined GITHUB_VERSION (
     echo Warning: failed to fetch the latest version. Check your internet connection. This warning does not affect the operation of zapret
     pause
-    if "%1"=="soft" exit /b 
+    if "%1"=="soft" exit 
     goto menu
 )
 
@@ -270,7 +278,7 @@ if not defined GITHUB_VERSION (
 if "%LOCAL_VERSION%"=="%GITHUB_VERSION%" (
     echo Latest version installed: %LOCAL_VERSION%
     
-    if "%1"=="soft" exit /b
+    if "%1"=="soft" exit 
     pause
     goto menu
 ) 
@@ -289,9 +297,10 @@ if /i "%CHOICE%"=="Y" (
 )
 
 
-if "%1"=="soft" exit /b
+if "%1"=="soft" exit 
 pause
 goto menu
+
 
 
 :: DIAGNOSTICS =========================
@@ -316,6 +325,16 @@ if !errorlevel!==0 (
     call :PrintRed "https://github.com/Flowseal/zapret-discord-youtube/issues/2512#issuecomment-2821119513"
 ) else (
     call :PrintGreen "Killer check passed"
+)
+echo:
+
+:: Intel Connectivity Network Service
+sc query | findstr /I "Intel" | findstr /I "Connectivity" | findstr /I "Network" > nul
+if !errorlevel!==0 (
+    call :PrintRed "[X] Intel Connectivity Network Service found. It conflicts with zapret"
+    call :PrintRed "https://github.com/ValdikSS/GoodbyeDPI/issues/541#issuecomment-2661670982"
+) else (
+    call :PrintGreen "Intel Connectivity check passed"
 )
 echo:
 
@@ -426,7 +445,7 @@ if exist "%gameFlagFile%" (
     set "GameFilter=1024-65535"
 ) else (
     set "GameFilterStatus=disabled"
-    set "GameFilter=0"
+    set "GameFilter=12"
 )
 exit /b
 
@@ -505,7 +524,7 @@ chcp 437 > nul
 cls
 
 set "listFile=%~dp0lists\ipset-all.txt"
-set "url=https://raw.githubusercontent.com/Flowseal/zapret-discord-youtube/refs/heads/main/lists/ipset-all.txt"
+set "url=https://raw.githubusercontent.com/Flowseal/zapret-discord-youtube/refs/heads/main/.service/ipset-service.txt"
 
 echo Updating ipset-all...
 
