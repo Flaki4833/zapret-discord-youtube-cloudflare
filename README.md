@@ -1,6 +1,6 @@
 <div align="center">
 
-# <img src="https://cdn-icons-png.flaticon.com/128/5968/5968756.png" height=28 /> <a href="https://github.com/Flaki4833/">Flaki4833</a><a href="https://github.com/Flaki4833/zapret-discord-youtube-cloudflare">/zapret-discord-youtube-cloudflare</a> <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" height=28 />
+# <img src="https://cdn-icons-png.flaticon.com/128/5968/5968756.png" height=28 /> <a href="https://github.com/Flaki4833/">Snappie-cmd</a><a href="https://github.com/Flaki4833/zapret-discord-youtube-cloudflare">/zapret-discord-youtube-cloudflare</a> <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" height=28 />
 
 *"Plug & Play"* обход блокировок иностранных платформ, <img src="https://cdn-icons-png.flaticon.com/128/5968/5968756.png" height=11 /> **Discord** и <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" height=11 /> **YouTube** для Windows
 
